@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  family_name: MyString
+  name: MyString
+  email: MyString
+  birthday: 2017-05-26
+  phone: MyString
+  cellphone: MyString
+  bio: MyString
+  carreer: MyString
+  rate: 9.99
+
+two:
+  family_name: MyString
+  name: MyString
+  email: MyString
+  birthday: 2017-05-26
+  phone: MyString
+  cellphone: MyString
+  bio: MyString
+  carreer: MyString
+  rate: 9.99

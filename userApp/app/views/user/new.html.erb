@@ -1,0 +1,46 @@
+<h1>New User</h1>
+<%= form_for :user, url: user_index_path do |u| %>
+  <p>
+    <%= u.label :family_name %><br>
+    <%= u.text_field :family_name %>
+  </p>
+ 
+  <p>
+    <%= u.label :name %><br>
+    <%= u.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= u.label :email %><br>
+    <%= u.email_field :email %>
+  </p>
+
+  <p>
+    <%= u.label :birthday %><br>
+    <%= u.date_field :birthday %>
+  </p>
+  
+  <p>
+    <%= u.label :phone %><br>
+    <%= u.text_field :phone %>
+  </p>
+
+  <p>
+    <%= u.label :cellphone %><br>
+    <%= u.text_field :cellphone %>
+  </p>
+
+  <p>
+    <%= u.label :bio %><br>
+    <%= u.text_area :bio %>
+  </p>
+
+  <p>
+    <%= u.label :rate %><br>
+    <%= u.number_field :rate %>
+  </p>
+
+  <p>
+    <%= u.submit %>
+  </p>
+<% end %>
