@@ -31,13 +31,13 @@ class User < ActiveRecord::Base
 	validates :cellphone, presence: true,
 						  format: { with: /\A^0\d(?:\d{8}|(?: \d\d){4})|\+33 0\d(?: \d\d){4}|\+33(?:\d{9})$\z/}
 	validates :bio, length: { maximum: 300, too_long: "%{count} characters is the maximum allowed" }
-	validates :carreer, length: { maximum: 300, too_long: "%{count} characters is the maximum allowed" }
+	validates :career, length: { maximum: 300, too_long: "%{count} characters is the maximum allowed" }
 	validates :rate, presence: true, numericality:{ :greater_than_or_equal_to => 0}
 
 	
 
 	def birthday_cannot_be_in_the_future
-		if birthday > Date.today
+		if birthday.present? && birthday > Date.today
 			errors.add(:birthday, "invalid")
 		end
 	end

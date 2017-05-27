@@ -8,7 +8,7 @@ one:
   phone: MyString
   cellphone: MyString
   bio: MyString
-  carreer: MyString
+  career: MyString
   rate: 9.99
 
 two:
@@ -19,5 +19,5 @@ two:
   phone: MyString
   cellphone: MyString
   bio: MyString
-  carreer: MyString
+  career: MyString
   rate: 9.99
