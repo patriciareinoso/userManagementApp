@@ -1,5 +1,5 @@
 
-<%= form_for :user, url: user_index_path do |u| %>
+<%= form_for @user do |u| %>
 
 <% if @user.errors.any? %>
     <div id="error_explanation">
