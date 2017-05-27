@@ -8,6 +8,7 @@
   <tr>
     <th>Family name</th>
     <th>Name</th>
+    <th colspan="3"></th>
   </tr>
  
   <% @user.each do |u| %>
@@ -15,6 +16,9 @@
       <td><%= u.family_name %></td>
       <td><%= u.name %></td>
       <td><%= link_to 'Show', user_path(u) %></td>
+      <td><%= link_to 'Edit', edit_user_path(u) %></td>
+      <td><%= link_to 'Destroy', user_path(u),
+              method: :delete %></td>
     </tr>
   <% end %>
 </table>

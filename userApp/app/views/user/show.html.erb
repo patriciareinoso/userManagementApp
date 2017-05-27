@@ -38,7 +38,7 @@
 
 
 <p>
-  <strong>Carreer:</strong>
+  <strong>Career:</strong>
   <%= @user.carreer %>
 </p>
 
@@ -48,4 +48,5 @@
   <%= @user.rate %>
 </p>
 
+<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', user_index_path %>

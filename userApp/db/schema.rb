@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170526112848) do
     t.string   "phone",       limit: 255
     t.string   "cellphone",   limit: 255
     t.string   "bio",         limit: 255
-    t.string   "carreer",     limit: 255
+    t.string   "career",     limit: 255
     t.decimal  "rate",                    precision: 10
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
