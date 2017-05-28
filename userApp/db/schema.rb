@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526112848) do
+ActiveRecord::Schema.define(version: 20170527234143) do
 
   create_table "users", force: :cascade do |t|
     t.string   "family_name", limit: 255
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170526112848) do
     t.string   "phone",       limit: 255
     t.string   "cellphone",   limit: 255
     t.string   "bio",         limit: 255
-    t.string   "career",     limit: 255
+    t.string   "career",      limit: 255
     t.decimal  "rate",                    precision: 10
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false

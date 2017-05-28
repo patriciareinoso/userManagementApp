@@ -62,7 +62,7 @@ class UserController < ApplicationController
 	# Validate params on the form.
 	private
 		def user_params	
-			params.require(:user).permit(:family_name, :name, :email, :birthday, :phone, :cellphone, :bio, :carreer, :rate)
+			params.require(:user).permit(:family_name, :name, :email, :birthday, :phone, :cellphone, :bio, :career, :rate)
 		end
 
 end

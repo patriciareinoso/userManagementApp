@@ -13,31 +13,36 @@
 # * rate must be non negative
 # * family_name, name, emails, birthday, cellphone, rate cannot be null.
 # * Formats allowed for phone and cellphone are:
-# * 0612345678, 06 12 34 56 78, +33 6 12 34 56 78, +33612345678
+# * 0xxxxxxxxx, 0x xx xx xx xx, +33 x xx xx xx xx, +33xxxxxxxxx
 # * Only aread code +33 is valid.
 class User < ActiveRecord::Base
 
+	MAX_NAME_LENGTH = 50
+	MAX_BIO_LENGTH = 200
+	MIN_RATE_VALUE = 0
+
 	validates :family_name, presence: true, 
 							format: { with: /\A[a-zA-Z\s]+\z/, message: "only allows letters and spaces" },
-							length: { maximum: 50, too_long: "%{count} characters is the maximum allowed"}
+							length: { maximum: MAX_NAME_LENGTH, too_long: "%{count} characters is the maximum allowed"}
 	validates :name, presence: true, 
 					 format: { with: /\A[a-zA-Z\s]+\z/, message: "only allows letters and spaces" },
-					 length: { maximum: 50, too_long: "%{count} characters is the maximum allowed"}
+					 length: { maximum: MAX_NAME_LENGTH, too_long: "%{count} characters is the maximum allowed"}
 	validates :email, presence: true,
 					  format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "invalid format" }
 	validates :birthday, presence: true
 	validate :birthday_cannot_be_in_the_future
-	validates :phone, format: { with: /\A^0\d(?:\d{8}|(?: \d\d){4})|\+33 0\d(?: \d\d){4}|\+33(?:\d{9})$\z/}
+	validates :phone, format: { with: /\A^0\d(?:\d{8}|(?: \d\d){4})|\+33 \d(?: \d\d){4}|\+33(?:\d{9})$\z/},
+					  presence: false, unless: Proc.new { |ifc| ifc.phone_before_type_cast.blank? }
 	validates :cellphone, presence: true,
-						  format: { with: /\A^0\d(?:\d{8}|(?: \d\d){4})|\+33 0\d(?: \d\d){4}|\+33(?:\d{9})$\z/}
-	validates :bio, length: { maximum: 300, too_long: "%{count} characters is the maximum allowed" }
-	validates :carreer, length: { maximum: 300, too_long: "%{count} characters is the maximum allowed" }
-	validates :rate, presence: true, numericality:{ :greater_than_or_equal_to => 0}
+						  format: { with: /\A^0\d(?:\d{8}|(?: \d\d){4})|\+33 \d(?: \d\d){4}|\+33(?:\d{9})$\z/}
+	validates :bio, length: { maximum: MAX_BIO_LENGTH, too_long: "%{count} characters is the maximum allowed" }
+	validates :career, length: { maximum: MAX_BIO_LENGTH, too_long: "%{count} characters is the maximum allowed" }
+	validates :rate, presence: true, numericality:{ :greater_than_or_equal_to => MIN_RATE_VALUE}
 
 	
 
 	def birthday_cannot_be_in_the_future
-		if birthday > Date.today
+		if birthday.present? && birthday > Date.today
 			errors.add(:birthday, "invalid")
 		end
 	end
