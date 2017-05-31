@@ -42,9 +42,11 @@ class User < ActiveRecord::Base
 	enum currency: {dollar: 'dollar', euro: 'euro'}
 	validates :currency, presence:true
 
+	
 	def birthday_cannot_be_in_the_future
 		if birthday.present? && birthday > Date.today
 			errors.add(:birthday, "invalid")
 		end
 	end
+
 end
