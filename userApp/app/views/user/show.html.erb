@@ -45,7 +45,7 @@
 
 <p>
   <strong>Rate:</strong>
-  <%= @user.rate %>
+  <%= @user.rate %> <%= @user.currency =='dollar' ? '$' : '€'%>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
