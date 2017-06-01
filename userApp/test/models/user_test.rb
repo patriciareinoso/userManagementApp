@@ -22,7 +22,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?
 
 	end
@@ -38,7 +39,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user is invalid without family name'
 		assert_not_nil user.errors[:family_name], 'no validation error for family name presence'
 	end
@@ -52,7 +54,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user family name should not exceeds 50 characteres'
 		assert_not_nil user.errors[:family_name], 'no validation error for family name length exceeds'
 	end
@@ -66,7 +69,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user family name should include numbers'
 		assert_not_nil user.errors[:family_name], 'no validation error for family name numbers'
 	end
@@ -80,7 +84,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user family name may include spaces'
 		assert_equal [], user.errors[:family_name], 'no validation error for family spaces'
 	end
@@ -94,7 +99,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user family name should not include special characteres'
 		assert_not_nil user.errors[:family_name], 'no validation error for family name spacial characteres'
 	end
@@ -109,7 +115,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user is invalid without name'
 		assert_not_nil user.errors[:name], 'no validation error for name presence'
 	end
@@ -123,7 +130,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user name should not exceeds 50 characteres'
 		assert_not_nil user.errors[:name], 'no validation error for name length exceeds'
 	end
@@ -137,7 +145,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user name should not include numbers'
 		assert_not_nil user.errors[:name], 'no validation error for name numbers'
 	end
@@ -151,7 +160,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user name may include numbers'
 		assert_equal [], user.errors[:name], 'no validation error for name with spaces'
 	end
@@ -165,7 +175,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user name should not include special characteres'
 		assert_not_nil user.errors[:name], 'no validation error for name with special characteres'
 	end
@@ -180,7 +191,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user is not valid without email'
 		assert_not_nil user.errors[:email], 'no validation error for email presence'
 	end
@@ -194,7 +206,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'email has an invalid format'
 		assert_not_nil user.errors[:email], 'no validation error for email bad format'
 	end
@@ -209,7 +222,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user is not valid without birthday'
 		assert_not_nil user.errors[:birthday], 'no validation error for birthday presence'
 	end
@@ -223,7 +237,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'birthday should not be in the future'
 		assert_not_nil user.errors[:birthday], 'no validation error for birthday in the future'
 	end
@@ -239,7 +254,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid without phone'
 		assert_equal [], user.errors[:phone], 'no validation error for phone presence'
 	end
@@ -253,7 +269,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with format 0xxxxxxxxx'
 		assert_equal [], user.errors[:phone], 'no validation error for phone format 0xxxxxxxxx'
 	end
@@ -267,7 +284,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with phone format 0x xx xx xx xx'
 		assert_equal [], user.errors[:phone], 'no validation error for phone format 0x xx xx xx xx'
 	end
@@ -281,7 +299,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with phone phoneformat +33 x xx xx xx xx'
 		assert_equal [], user.errors[:phone], 'no validation error for phone format +33 x xx xx xx xx'
 	end
@@ -295,7 +314,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with phone format +33xxxxxxxxx'
 		assert_equal [], user.errors[:phone], 'no validation error for phone format +33xxxxxxxxx'
 	end
@@ -309,7 +329,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should be valid with phone format +33xxxxxxxxxy'
 		assert_not_nil user.errors[:phone], 'no validation error for phone format +33xxxxxxxxxy'
 	end
@@ -323,7 +344,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should be valid with phone format xxx'
 		assert_not_nil user.errors[:phone], 'no validation error for phone format xxx'
 	end
@@ -339,7 +361,8 @@ class UserTest < ActiveSupport::TestCase
 						phone:'0612345678',  
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should be valid without cellphone'
 		assert_not_nil user.errors[:cellphone], 'no validation error for cellphone presence'
 	end
@@ -353,7 +376,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with cellphone format 0xxxxxxxxx'
 		assert_equal [], user.errors[:phone], 'no validation error for cellphone format 0xxxxxxxxx'
 	end
@@ -367,7 +391,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'06 12 34 56 78', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with cellphone format 0x xx xx xx xx'
 		assert_equal [], user.errors[:cellphone], 'no validation error for cellphone format 0x xx xx xx xx'
 	end
@@ -381,7 +406,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'+33 6 12 34 56 78', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with cellphone format +33 x xx xx xx xx'
 		assert_equal [], user.errors[:cellphone], 'no validation error for phone format +33 x xx xx xx xx'
 	end
@@ -395,7 +421,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'+33612345678', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with cellphone format +33xxxxxxxxx'
 		assert_equal [], user.errors[:cellphone], 'no validation error for cellphone format +33xxxxxxxxx'
 	end
@@ -409,7 +436,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'+336123456781', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should be valid with cellphone format +33xxxxxxxxxy'
 		assert_not_nil user.errors[:cellphone], 'no validation error for cellphone format +33xxxxxxxxxy'
 	end
@@ -423,7 +451,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'xxx', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should be valid with cellphone format xxx'
 		assert_not_nil user.errors[:cellphone], 'no validation error for cellphone format xxx'
 	end
@@ -438,7 +467,8 @@ class UserTest < ActiveSupport::TestCase
 						phone:'0612345678', 
 						cellphone:'0123456789', 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid without bio'
 		assert_equal [], user.errors[:bio], 'no validation error for bio presence'
 	end
@@ -452,7 +482,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie'*100, 
 						career: 'John Doe\'s career description', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should not be valid with bio exceeds length'
 		assert_not_nil user.errors[:bio], 'no validation error for bio exceeds length'
 	end
@@ -467,7 +498,8 @@ class UserTest < ActiveSupport::TestCase
 						phone:'0612345678', 
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid without career'
 		assert_equal [], user.errors[:career], 'no validation error for career presence'
 	end
@@ -481,7 +513,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description'*100, 
-						rate: '10')
+						rate: '10',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should not be valid with career exceeds length'
 		assert_not_nil user.errors[:career], 'no validation error for career exceeds length'
 	end
@@ -496,7 +529,8 @@ class UserTest < ActiveSupport::TestCase
 						phone:'0612345678', 
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
-						career: 'John Doe\'s career description')
+						career: 'John Doe\'s career description',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should not be valid without rate'
 		assert_not_nil user.errors[:rate], 'no validation error for rate presence'
 	end
@@ -510,7 +544,8 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '-5')
+						rate: '-5',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should not be valid with negative rate'
 		assert_not_nil user.errors[:rate], 'no validation error for rate negative'
 	end
@@ -524,11 +559,13 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: '0')
+						rate: '0',
+						currency: 'dollar')
 		assert user.valid?, 'user should be valid with rate zero'
 		assert_equal [], user.errors[:rate], 'no validation error for rate zero'
 	end
 
+	
 	test "rate should not include characteres" do
 		user = User.new(family_name: 'Doe', 
 						name: 'Joe', 
@@ -538,9 +575,55 @@ class UserTest < ActiveSupport::TestCase
 						cellphone:'0123456789', 
 						bio: 'John Doe\'s biographie', 
 						career: 'John Doe\'s career description', 
-						rate: 'dd')
+						rate: 'dd',
+						currency: 'dollar')
 		assert_not user.valid?, 'user should not be valid with rate with characteres'
 		assert_not_nil user.errors[:rate], 'no validation error for rate with characteres'
+	end
+
+	# CURRENCY ATTRIBUTE TESTS
+	test "user should not be valid without currency" do
+		user = User.new(family_name: 'Doe', 
+						name: 'Joe', 
+						email: 'john@doe.com', 
+						birthday:'1994-07-05', 
+						phone:'0612345678', 
+						cellphone:'0123456789', 
+						bio: 'John Doe\'s biographie', 
+						career: 'John Doe\'s career description', 
+						rate: '55')
+		assert_not user.valid?, 'user should not be valid without currency'
+		assert_not_nil user.errors[:currency], 'no validation error for currency absence'
+	end
+
+	test "currency can be dollar" do
+		user = User.new(family_name: 'Doe', 
+						name: 'Joe', 
+						email: 'john@doe.com', 
+						birthday:'1994-07-05', 
+						phone:'0612345678', 
+						cellphone:'0123456789', 
+						bio: 'John Doe\'s biographie', 
+						career: 'John Doe\'s career description', 
+						rate: '55',
+						currency: 'dollar')
+		assert user.valid?, 'user should not be valid with rate with currency with dollars'
+		assert_equal [], user.errors[:currency], 'no validation error for currency with dollars'
+	end
+
+	test "currency can be euro" do
+		user = User.new(family_name: 'Doe', 
+						name: 'Joe', 
+						email: 'john@doe.com', 
+						birthday:'1994-07-05', 
+						phone:'0612345678', 
+						cellphone:'0123456789', 
+						bio: 'John Doe\'s biographie', 
+						career: 'John Doe\'s career description', 
+						rate: '55',
+						currency: 'euro')
+		assert user.valid?, 'user should not be valid with with currency with euros'
+		assert_equal [], user.errors[:currency], 'no validation error for currency with euros'
 	end
 
 end

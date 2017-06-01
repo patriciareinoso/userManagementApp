@@ -57,7 +57,12 @@
 
   <p>
     <%= u.label :rate %><br>
-    <%= u.number_field :rate %>
+    <%= u.number_field :rate , :step => 0.01 %>
+  </p>
+
+    <p>
+    <%= u.label :currency %><br>
+    <%= u.select(:currency, [['$','dollar'],['€','euro']]) %>
   </p>
 
   <p>

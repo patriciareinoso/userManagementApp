@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 	MAX_NAME_LENGTH = 50
 	MAX_BIO_LENGTH = 200
 	MIN_RATE_VALUE = 0
+	MAX_RATE_VALUE = 999999999999999.99
 
 	validates :family_name, presence: true, 
 							format: { with: /\A[a-zA-Z\s]+\z/, message: "only allows letters and spaces" },
@@ -37,13 +38,15 @@ class User < ActiveRecord::Base
 						  format: { with: /\A^0\d(?:\d{8}|(?: \d\d){4})|\+33 \d(?: \d\d){4}|\+33(?:\d{9})$\z/}
 	validates :bio, length: { maximum: MAX_BIO_LENGTH, too_long: "%{count} characters is the maximum allowed" }
 	validates :career, length: { maximum: MAX_BIO_LENGTH, too_long: "%{count} characters is the maximum allowed" }
-	validates :rate, presence: true, numericality:{ :greater_than_or_equal_to => MIN_RATE_VALUE}
+	validates :rate, presence: true, numericality:{ :greater_than_or_equal_to => MIN_RATE_VALUE, :less_than => MAX_RATE_VALUE}
+	enum currency: {dollar: 'dollar', euro: 'euro'}
+	validates :currency, presence:true
 
 	
-
 	def birthday_cannot_be_in_the_future
 		if birthday.present? && birthday > Date.today
 			errors.add(:birthday, "invalid")
 		end
 	end
+
 end
