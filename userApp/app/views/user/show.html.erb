@@ -1,0 +1,52 @@
+
+<p>
+  <strong>Family name:</strong>
+  <%= @user.family_name %>
+</p>
+ 
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @user.birthday %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+
+
+<p>
+  <strong>Cellhone:</strong>
+  <%= @user.cellphone %>
+</p>
+
+
+<p>
+  <strong>Biographie:</strong>
+  <%= @user.bio %>
+</p>
+
+
+<p>
+  <strong>Career:</strong>
+  <%= @user.career %>
+</p>
+
+
+<p>
+  <strong>Rate:</strong>
+  <%= @user.rate %> <%= @user.currency =='dollar' ? '$' : '€'%>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

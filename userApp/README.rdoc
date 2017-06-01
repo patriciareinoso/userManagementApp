@@ -1,0 +1,83 @@
+== README
+
+* Ruby version
+ 2.3.1
+
+* Rails version
+ 4.2.6
+
+* System dependencies
+
+The list of the gems and dependencies needed in order to install the application are located on:
+/userManagementApp/userApp/Gemfile.lock
+
+Using the command bundle may be useful.
+
+* Database creation
+
+This applications uses MySQL as database. 
+It is necesary to install MySQL and its develpment libraries:
+
+$ sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+
+$ sudo mysql_install_db
+
+$ sudo mysql_secure_installation
+
+$ gem install mysql2
+
+File 
+
+/userManagementApp/userApp/config/database.yml
+
+contains the username and the password established during mysql installation.
+
+This file also species that userApp_development is going to be used by default during the development process.
+
+To create the database execute:
+
+$ rake db:create
+
+If the database already exists execute:
+
+$ rake db:reset
+
+To guarantee that it follows the necessay structure.
+
+
+* How to run the test suite
+
+Executing the command rake will run all the test created.
+
+Test created are located on:
+
+/userManagementApp/userApp/test/models/user_test.rb
+
+* Services
+
+To start the server execute:
+
+$ rails server
+
+The server will be run on localhost on port 3000
+
+Open your web browser and use http://localhost:3000/ as URL.
+
+
+Remarks:
+
+To execute rails and rake commands you must be positioned on the directory /userManagementApp/userApp/
+
+Front end of this application has not been implemented.
+Only model unit tests related to input format when creating a user have been created.
+
+Test created are located on:
+
+/userManagementApp/userApp/test/models/user_test.rb
+
+More documentation can be found on:
+
+/userManagementApp/documentation.
+
+
+https://www.digitalocean.com/community/tutorials/how-to-use-mysql-with-your-ruby-on-rails-application-on-ubuntu-14-04
